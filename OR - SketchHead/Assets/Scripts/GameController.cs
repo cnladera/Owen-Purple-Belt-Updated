@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 public class GameController : MonoBehaviour
 {
     [Header("Platform Object")]
@@ -10,6 +11,7 @@ public class GameController : MonoBehaviour
     float pos = 0;
     [Header("Game Over UI Canvas Object")]
     public GameObject gameOverCanvas;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +30,5 @@ public class GameController : MonoBehaviour
         gameOverCanvas.SetActive(true);
     }
     // Update is called once per frame
-    void Update()
-    {
-        if (rb.velocity.y > 0 && transform.position.y > topScore)
-        {
-            topScore = transform.position.y;
-        }
-        scoreText.text = "Score:" + Mathf.round(topScore).ToString();
-    }
+    
 }
